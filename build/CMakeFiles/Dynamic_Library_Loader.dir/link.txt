@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDynamic_Library_Loader.a CMakeFiles/Dynamic_Library_Loader.dir/home/shyonome/Documents/Projects/C++/Technical/Dynamic-Library-Loader/sources/Memory.cpp.o
+/usr/bin/ranlib libDynamic_Library_Loader.a
