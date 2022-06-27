@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/shyonome/Documents/Projects/C++/Technical/Dynamic-Library-Loader/build",
-  "command": "/usr/bin/g++   -g -std=gnu++20 -o CMakeFiles/DynamicLibraryLoader.dir/home/shyonome/Documents/Projects/C++/Technical/Dynamic-Library-Loader/sources/Dynamic_Library_Loader.cpp.o -c /home/shyonome/Documents/Projects/C++/Technical/Dynamic-Library-Loader/sources/Dynamic_Library_Loader.cpp",
-  "file": "/home/shyonome/Documents/Projects/C++/Technical/Dynamic-Library-Loader/sources/Dynamic_Library_Loader.cpp"
-}
-]

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libGen.a CMakeFiles/Gen.dir/home/shyonome/Documents/Projects/C++/Technical/Dynamic-Library-Loader/sources/Memory.cpp.o
-/usr/bin/ranlib libGen.a
