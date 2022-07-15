@@ -2,17 +2,8 @@
 #define DYNAMIC_LIBRARY_LOADER_HPP_
 
 #include <iostream>
-#include <memory>
 #include <dlfcn.h>
-
-namespace Error_Handler {
-
-    class Error_Message : public std::runtime_error {
-        public:
-            explicit Error_Message(const std::string &error) : std::runtime_error(error) {};
-    };
-
-}
+#include <memory>
 
 namespace Basic_Loader {
 
@@ -27,9 +18,9 @@ namespace Basic_Loader {
 
             //? Load Opened File Into Memory & Access Its Entry Point
             template <typename T>
-            T loadFile(std::string const &function) const
+            T loadFile(std::string const &entryPoint) const
             {
-                return (T)dlsym(_handler, function.c_str());    //? function Represent The Needed Entry Point
+                return (T)dlsym(_handler, entryPoint.c_str());    //? function Represent The Needed Entry Point
             }
 
             //? Close Loaded File
@@ -70,10 +61,10 @@ namespace Dynamic_Loader {
             using UniqueTypePtr = typename Type_Creator::Type_Allocator<T>::UniqueTypePtr;
 
             template <typename T>
-            auto loadUnique(std::string const &file, std::string const &function)
+            auto loadUnique(std::string const &file, std::string const &entryPoint)
             {
                 _libraryInstance.openFile(file);
-                UniqueTypePtr<T> ptr = _libraryInstance.loadFile<UniqueTypePtr<T>>(function);
+                UniqueTypePtr<T> ptr = _libraryInstance.loadFile<UniqueTypePtr<T>>(entryPoint);
                 return ptr();
             }
 
@@ -81,10 +72,10 @@ namespace Dynamic_Loader {
             using SharedTypePtr = typename Type_Creator::Type_Allocator<T>::SharedTypePtr;
 
             template <typename T>
-            auto loadShared(std::string const &file, std::string const &function)
+            auto loadShared(std::string const &file, std::string const &entryPoint)
             {
                 _libraryInstance.openFile(file);
-                SharedTypePtr<T> ptr = _libraryInstance.loadFile<SharedTypePtr<T>>(function);
+                SharedTypePtr<T> ptr = _libraryInstance.loadFile<SharedTypePtr<T>>(entryPoint);
                 return ptr();
             }
 
