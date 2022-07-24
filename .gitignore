@@ -32,10 +32,5 @@
 *.app
 
 # Custom Files
-.vscode
-.cmake
-CMakeFiles
-cmake_install.cmake
-CMakeCache.txt
-Makefile
+build
 main.cpp
